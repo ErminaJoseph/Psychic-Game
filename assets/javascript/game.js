@@ -14,7 +14,6 @@ document.onkeyup = function(event) {
     var userChoice = event.key;
     guessesSubmitted.push(userChoice);
     
-    console.log(userChoice);
         
             if (userChoice === computerChoice) {
                 wins++;
