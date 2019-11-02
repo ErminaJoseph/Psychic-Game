@@ -2,45 +2,50 @@ var computerGuess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
 var computerChoice = computerGuess[Math.floor(Math.random() * computerGuess.length)];
 
 var wins = 0;
-var winsText = document.getElementById("wins");
-
 var losses = 0;
-var lossesText = document.getElementById("losses");
+var numberOfGuesses = 10;
+var guessesSubmitted = [];
 
-var guessesSubmitted = 20;
-var guessesSubmittedText = document.getElementById("guesses-submitted");
-
-var guessesSubmitted = []
-var numberOfGuessesText = document.getElementById("guesses-left");
+console.log(computerChoice);
 
 
 document.onkeyup = function(event) {
 
     var userChoice = event.key;
+    guessesSubmitted.push(userChoice);
     
-    for (i = 0; i < computerGuess.length; i++){
-        
-        if (userChoice === computerGuess[i]) {
+    console.log(userChoice);
         
             if (userChoice === computerChoice) {
                 wins++;
+                if (wins === 1) {
+                    numberOfGuesses = 10;
+                    computerChoice = computerGuess[Math.floor(Math.random() * computerGuess.length)];
+                    guessesSubmitted = [];
+                }
             } else {
-                losses++;
-                guessesSubmitted--;
+                numberOfGuesses--;
+                if (numberOfGuesses === 0) {
+                    losses++;
+                    if (losses >=  1) {
+                    numberOfGuesses = 10;
+                    computerChoice = computerGuess[Math.floor(Math.random() * computerGuess.length)];
+                    guessesSubmitted = [];
+                    }
+                }
             }
 
-            winsText.textContent = "Wins: " + wins;
-            lossesText.textContent = "Losses: " + losses;
-            numberOfGuessesText.textContent = "Guesses Left " + numberOfGuesses;
-            guessesSubmittedText.textContent = "Your Guesses So Far: " + guessesSubmitted.push(userChoice);
-        }    
-    }
+        var winsText = document.getElementById("wins");
+        winsText.textContent = "Wins: " + wins;
+
+        var lossesText = document.getElementById("losses");
+        lossesText.textContent = "Losses: " + losses;
+
+        var numberOfGuessesText = document.getElementById("guesses-left");
+        numberOfGuessesText.textContent = "Guesses Left: " + numberOfGuesses;
+
+        var guessesSubmittedText = document.getElementById("guesses-submitted");
+        guessesSubmittedText.textContent = "Your Guesses So Far: " + guessesSubmitted;
+        
 }
 
-function resetGame () {
-    if (wins === 1) {
-        var computerChoice = computerGuess[Math.floor(Math.random() * computerGuess.length)];
-    } else if (losses === 20) {
-        var computerChoice = computerGuess[Math.floor(Math.random() * computerGuess.length)];
-    }
-}
