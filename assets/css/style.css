@@ -1,23 +1,43 @@
 body {
     margin: 0 auto;
     text-align: center;
+    font-family: 'Righteous', cursive;
+    background: url(../images/misty.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 header {
     margin: 0 auto;
     text-align: center;
+    font-family: 'Righteous', cursive;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-style: dotted;
+    border-color: #635b7f;
 }
 
-#container {
-    margin: 0 auto;
+img {
+    width: 50px;
+    height: 50px;
+}
+.container {
+    margin: 0 0 50px 0;
     text-align: center;
+    font-family: 'Righteous', cursive;
+    height: 400px;
+    width: 960px;
+    background-color: black;
+    color: white;
 }
 
-h3 {
-    text-align: center;
-}
 
 footer{
     margin: 0 auto;
-    bottom: 0%;
+    bottom: 0;
+    background-color: black;
+    width: 100%;
+    color: white;
+    text-align: center;
 }

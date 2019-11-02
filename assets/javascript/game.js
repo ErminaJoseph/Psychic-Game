@@ -27,9 +27,9 @@ document.onkeyup = function(event) {
                 wins++;
             } else {
                 losses++;
-                numberOfGuesses--;
+                guessesSubmitted--;
             }
-
+            
             winsText.textContent = "Wins: " + wins;
             lossesText.textContent = "Losses: " + losses;
             numberOfGuessesText.textContent = "Guesses Left " + numberOfGuesses;
