@@ -1,8 +1,23 @@
 body {
     margin: 0 auto;
+    text-align: center;
 }
 
-img {
-    height: 50px;
-    width: 50px;
+header {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+footer{
+    margin: 0 auto;
+    bottom: 0%;
 }
