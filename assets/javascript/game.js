@@ -6,8 +6,6 @@ var losses = 0;
 var numberOfGuesses = 10;
 var guessesSubmitted = [];
 
-console.log(computerChoice);
-
 
 document.onkeyup = function(event) {
 
