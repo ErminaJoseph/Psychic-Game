@@ -1,11 +1,12 @@
 var computerGuess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var computerChoice = computerGuess[Math.floor(Math.random() * computerGuess.length)];
-
 var wins = 0;
 var losses = 0;
 var numberOfGuesses = 10;
 var guessesSubmitted = [];
 
+// Console log to confirm the actual value.  Not for cheating purposes.
+console.log(computerChoice);
 
 document.onkeyup = function(event) {
 
@@ -15,10 +16,12 @@ document.onkeyup = function(event) {
         
             if (userChoice === computerChoice) {
                 wins++;
-                if (wins === 1) {
+                if (wins >= 1) {
                     numberOfGuesses = 10;
                     computerChoice = computerGuess[Math.floor(Math.random() * computerGuess.length)];
                     guessesSubmitted = [];
+                    // Console log to confirm the actual value.  Not for cheating purposes.
+                    console.log(computerChoice);
                 }
             } else {
                 numberOfGuesses--;
@@ -28,6 +31,8 @@ document.onkeyup = function(event) {
                     numberOfGuesses = 10;
                     computerChoice = computerGuess[Math.floor(Math.random() * computerGuess.length)];
                     guessesSubmitted = [];
+                    // Console log to confirm the actual value.  Not for cheating purposes.
+                    console.log(computerChoice);
                     }
                 }
             }
